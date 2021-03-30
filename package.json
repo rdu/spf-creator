@@ -1,0 +1,17 @@
+{
+  "name": "spf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.37"
+  },
+  "dependencies": {
+    "powerdns_api": "^1.0.2"
+  }
+}
