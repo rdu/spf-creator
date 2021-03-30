@@ -1,8 +1,8 @@
 import * as pdns from 'powerdns_api';
 import * as request from 'request';
+import * as publicIp from 'public-ip';
 
 const SUBDOMAIN = process.env.SUBDOMAIN || 'spf1';
-const NODEIP = process.env.NODE_IP || '127.0.0.1';
 const ZONE = process.env.ZONE || 'example.de';
 
 const HOSTNAME = process.env.PDNS_HOSTNAME || 'pdns-host';
@@ -71,6 +71,7 @@ const updateSpfRecord = async (zoneName: string) =>
 
 (async () =>
 {
+    const NODEIP = process.env.NODE_IP || await publicIp.v4();
     // update current node ip
     await updateZone(ZONE, `_spf_ip_${NODEIP}`, `"${NODEIP}"`);
     await delay(Math.random() * 10000);

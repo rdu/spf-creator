@@ -12,6 +12,8 @@
     "@types/node": "^14.14.37"
   },
   "dependencies": {
-    "powerdns_api": "^1.0.2"
+    "@types/public-ip": "^3.1.0",
+    "powerdns_api": "^1.0.2",
+    "public-ip": "^4.0.3"
   }
 }
