@@ -74,11 +74,9 @@ const updateSpfRecord = async (zoneName: string) =>
     const NODEIP = process.env.NODE_IP || await publicIp.v4();
     // update current node ip
     await updateZone(ZONE, `_spf_ip_${NODEIP}`, `"${NODEIP}"`);
-    await delay(Math.random() * 10000);
+    // await delay(Math.random() * 10000);
     // update spf record
     await updateSpfRecord(ZONE);
-    while (true)
-    {
-        await delay(Math.random() * 10000);
-    }
+    await delay(Math.random() * 1000);
+    process.exit(0);
 })();
